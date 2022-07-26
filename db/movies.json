@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"movie_name": "Top Gun"
+	},
+	{
+		"id": 2,
+		"movie_name": "Interview with a Vampire"
+	},
+	{
+		"id": 3,
+		"movie_name": "Sonic"
+	},
+	{
+		"id": 4,
+		"movie_name": "Land Before Time"
+	},
+	{
+		"id": 5,
+		"movie_name": "Conjuring"
+	},
+	{
+		"id": 6,
+		"movie_name": "What We Do in the Shadows"
+	}
+]

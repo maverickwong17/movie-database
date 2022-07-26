@@ -16,3 +16,7 @@ CREATE TABLE reviews(
     REFERENCES movies(id)
     ON DELETE SET NULL
 );
+
+SELECT reviews.id, movies.movie_name, reviews.review AS review
+From reviews
+Join movies on reviews.movie_id = movies.id
