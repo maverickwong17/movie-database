@@ -8,16 +8,16 @@ const app = express();
 app.use(express.urlencoded({ extended:false }));
 app.use(express.json());
 
-const db = mysql.connect(
+const db = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
         password: 'password',
-        database: 'db'
+        database: 'movie_db'
     },
     console.log('connected to database folder')
 );
 
-app.listen(PORT, () =>{
-    console.log("listening")
-});
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
