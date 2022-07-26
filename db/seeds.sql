@@ -1,0 +1,31 @@
+INSERT INTO movies (movie_name)
+VALUES  ('Top Gun'),
+        ('Interview with a Vampire'),
+        ('Sonic'),
+        ('Land Before Time'),
+        ('Conjuring'),
+        ('What We Do in the Shadows');
+
+INSERT INTO reviews (movie_id, review)
+VALUES  (1,'Amazing'),
+        (2,'Amazing'),
+        (3,'Amazing'),
+        (4,'Amazing'),
+        (5,'Amazing'),
+        (5,'Amazing'),
+        (6,'Amazing'),
+        (1,'Fantastic'),
+        (1,'Fantastic'),
+        (2,'Fantastic'),
+        (3,'Fantastic'),
+        (4,'Fantastic'),
+        (5,'Fantastic'),
+        (6,'Fantastic'),
+        (6,'Fantastic'),
+        (1,'MEH'),
+        (2,'MEH'),
+        (3,'MEH'),
+        (4,'MEH'),
+        (4,'MEH'),
+        (5,'MEH'),
+        (6,'MEH');
