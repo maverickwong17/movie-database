@@ -1,8 +1,8 @@
 const express = require('express')
 const mysql = require('mysql2')
 const fs = require('fs')
-// const movies = require('./db/movies.json')
-// const reviews = require('./db/reviews.json')
+const movies = require('./db/movies.json')
+const reviews = require('./db/reviews.json')
 
 const PORT = 3001;
 const app = express();
@@ -20,7 +20,42 @@ const db = mysql.createConnection(
     console.log('connected to database folder')
 );
 
+app.get('/api/movies', (req, res) => {
+    res.json(movies)
+    console.log('in the get route')
+});
 
+app.post('/api/add-movie', (req, res) => {
+    const { id, movie_name } = req.body;
+    fs.readFile('./db/movies.json', 'utf8', (err, data) => {
+        if (err) {
+            console.log(err);
+        }   else {
+            const movieInfo = {
+                id: id,
+                movie_name: movie_name,
+            }
+
+            const parsedMovie = JSON.parse(data);
+
+            parsedMovie.push(movieInfo)
+            movies = parsedMovie;
+
+            fs.writeFile(
+                './db/movies.json',
+                JSON.stringify(parsedMovie, null, 4),
+                (writeErr) =>
+                    writeErr
+                    ? console.error(writeErr)
+                    : console.info('successfully updated movie')
+            )
+        }
+    })
+})
+
+app.post('api/update-review')
+
+app.delete('/api/movie/:id')
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
